@@ -1,0 +1,42 @@
+<main class="main bg-home">
+
+  <section class="full-site-width">
+    <div class="main-wrap main-wrap-home">
+      {{#foreach posts}}
+      <div class="ps">
+        {{!-- Post Loop Content --}}
+        <article class="ps-inner">
+          {{!-- Tags --}}
+          {{#if tags}}<div class="ps-tags show-on-small-screen">{{#foreach tags}}<a href="{{url}}" class="btn btn-flat" title={{name}}>{{name}}</a>{{/foreach}}</div>{{/if}}
+          {{!-- post content --}}
+          <div class="ps-content">
+            {{!-- Add img Cover --}}
+            {{#if image}}<span><a href="{{url}}" class="ps-thumb"><img src="{{image}}" alt="{{title}}"/></a></span>{{/if}}
+            {{!-- post Title --}}
+            <a class="ps-title" href="{{url}}"><h2>{{title}}</h2></a>
+            {{!-- post author & datetime--}}
+            <div class="byline">
+              <time class="timestamp" datetime="{{date format='YYYY-MM-DD'}}">{{date published_at timeago="true"}}</time>
+              by {{#author}}<a href="{{url}}" title="{{name}}" class="author">{{name}}</a>{{/author}}
+            </div>
+            {{!-- Post excerpt --}}
+            <p class="ps-excerpt show-on-small-screen">{{excerpt characters="260"}}... <a class="read-more" href="{{url}}">Read More</a></p>
+            {{!-- Share Post --}}
+            <aside class="share show-on-small-screen">
+              {{> "jiathis"}}
+            </aside>
+
+          </div>
+        </article>
+      </div>
+      {{/foreach}}
+      {{! -- Add Pagination -- }}
+      {{pagination}}
+    </div>
+
+    {{!-- Add Sidebar --}}
+    {{> "sidebar"}}
+
+  </section>
+
+</main>

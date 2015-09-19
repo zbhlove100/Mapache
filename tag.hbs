@@ -1,0 +1,12 @@
+{{!-- Add Layout --}}
+{{!< default}}
+<header class="godo-header {{#if tag.image}}cover" style="background-image: url({{tag.image}}){{else}}no-cover{{/if}}">
+  <article class="godo-header-wrap">
+    {{!-- Blog name --}}
+    <h1 class="godo-header-title">{{tag.name}}</h1>
+    {{!-- Blog description --}}
+    <p class="godo-header-description">{{#if tag.description}}{{tag.description}}{{else}}A collection of {{pagination.total}} Articles{{/if}}</p>
+  </article>
+</header>
+{{!-- Add Loop --}}
+{{> "loop"}}

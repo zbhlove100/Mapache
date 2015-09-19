@@ -1,0 +1,9 @@
+{{!-- Pagination --}}
+<div class="pagination center">
+  {{!-- Newer page --}}
+  <a href="{{page_url prev}}" class="btn btn-circle {{#if prev}}active{{else}}disabled{{/if}}"><i class="fa fa-arrow-left"></i></a>
+  {{!-- Counter pages --}}
+  <span class="pagination-number">{{page}} / {{pages}}</span>
+  {{!-- Older page --}}
+  <a href="{{page_url next}}" class="btn btn-circle {{#if next}}active{{else}}disabled{{/if}}"><i class="fa fa-arrow-right"></i></a>
+</div>
