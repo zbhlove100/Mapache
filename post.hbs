@@ -12,7 +12,7 @@
         <div class="byline">Published <time datetime="{{date format='YYYY-MM-DD'}}">{{date published_at timeago="true"}}</time>  by {{#author}}<a href="{{url}}">{{name}}</a>{{/author}}</div>
         {{!-- Follow --}}
         {{!-- Tags --}}
-         {{#if tags}}<p class="tags">更多: {{tags}}</p>{{/if}}
+         {{#if tags}}<p class="tags">更多: {{#foreach tags}}<a href="{{url}}" class="btn btn-flat bg-facebook" title={{name}}>{{name}}</a>{{/foreach}}</p>{{/if}}
         <aside class="follow show-on-small-screen">
           <!--
           
